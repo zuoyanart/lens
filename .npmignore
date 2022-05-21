@@ -1,0 +1,14 @@
+.git
+.hg
+.*.swp
+.DS_Store
+._*
+npm-debug.log
+node_modules
+package-lock.json
+*.md
+/test
+/parser
+/doc
+.ncurc.json
+.yunjinrc.js
