@@ -69,7 +69,7 @@ lens g [platform]//platform: h5 or uniapp
 
 
 
-[示例demo](https://gitee.com/d2-c/lens/demo)。
+[示例demo](./demo)。
 
 ### 设计稿格式与输出平台
 | 设计稿格式 | 解析方式 | 支持程度                | 说明 |
