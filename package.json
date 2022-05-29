@@ -1,6 +1,6 @@
 {
   "name": "@zuoyanart/lens",
-  "version": "2.0",
+  "version": "2.0.0",
   "description": "intelligent code generation platform",
   "main": "index.js",
   "bin": {
