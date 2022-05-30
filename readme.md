@@ -86,12 +86,10 @@ npm config set sharp_libvips_binary_host "https://npm.taobao.org/mirrors/sharp-l
 
 ### 演示
 #### 生成静态页
-[生成静态页视频](./doc/demo/h5.mp4)
+![生成静态页](./doc/demo/h5.gif)
 
 #### 验证还原度
-<video id="video" controls="" preload="none"  poster="封面">
-    <source id="mp41" src="./doc/demo/check.mp4" type="video/mp4">
-</video>
+![验证还原度](./doc/demo/check.gif)
 
 ### 大版本 RoadMap
 
