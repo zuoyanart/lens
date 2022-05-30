@@ -8,7 +8,7 @@
   },
   "author": "zuoyan",
   "mail": "huabinglan@163.com",
-  "license": "GPL",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/eslint-parser": "^7.17.0",
