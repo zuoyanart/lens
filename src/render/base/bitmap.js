@@ -11,11 +11,17 @@ module.exports = class {
   constructor(layer = {}, layerParent) {
     this.layer = layer;
     this.layerParent = layerParent;
+    this.imagePath = '';
   }
 
   getStyle() {
     const fontStyle = this.layer.style;
     // delete fontStyle.paddingTop;
+
+    fontStyle.backgroundImage = this.layer.style.backgroundImage ? `url(${path.join(this.imagePath, this.layer.style.backgroundImage).replace(/\\/g, '/')})` : null;
+    fontStyle.backgroundRepeat = this.layer.style.backgroundRepeat;
+    fontStyle.backgroundSize = this.layer.style.backgroundImage ? 'contain' : null;
+    fontStyle.backgroundColor = this.layer.style.backgroundColor;
 
     fontStyle.paddingTop = tools.getElementUnit(this.layer.style.paddingTop);
     fontStyle.marginTop = tools.getElementUnit(this.layer.style.marginTop);
@@ -31,6 +37,16 @@ module.exports = class {
       delete fontStyle.borderWidth;
       delete fontStyle.borderStyle;
       delete fontStyle.borderColor;
+    }
+    if (this.layer.style.backgroundImage) {
+      try {
+        const imgName = this.layer.style.backgroundImage.split('/').pop();
+        fs.ensureDirSync(path.resolve(yunjin.WORK_PATH, './' + yunjin.config.target.platform + '/' + yunjin.config.target.artboardName + '/images'));
+
+        fs.copyFileSync(path.resolve(yunjin.WORK_RUNTIME_UIDSL, `./${this.layer.style.backgroundImage}`), path.resolve(yunjin.WORK_PATH, './' + yunjin.config.target.platform + '/' + yunjin.config.target.artboardName + '/images' + '/' + imgName));
+      } catch (e) {
+        // console.log('copyFileSync-e', e);
+      }
     }
     return fontStyle;
   }

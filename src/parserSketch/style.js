@@ -150,7 +150,7 @@ module.exports = class {
 
   parseText(result = {}) {
     const textStyle = this.layer.get('textStyle');
-    if (textStyle) {
+    if (this.layer._class === 'text' && textStyle) {
       const opacity = 1;
       const className = this.layer._class;
       if (className === 'text') {
@@ -159,8 +159,15 @@ module.exports = class {
           // opacity = layerStyle.contextSettings.opacity;
         }
       }
-      const color = textStyle.get('color');
-      color.alpha = opacity || color.alpha;
+      let color = textStyle.get('color');
+      if (!color) {
+        color = {
+          red: 0,
+          green: 0,
+          blue: 0
+        };
+      }
+      color.alpha = color.alpha || opacity;
       const paragraph = textStyle.get('paragraphStyle');
       const font = textStyle.get('fontDescriptor');
       const alignments = ['left', 'right', 'center', 'justify'];
@@ -172,10 +179,10 @@ module.exports = class {
       textStyle.encodedAttributes.kerning = textStyle.encodedAttributes.kerning || 0;
       result.font = {
         color: tools.colorParser(color),
-        textAlign: alignments[paragraph.alignment],
+        textAlign: alignments[paragraph?.alignment || 'left'],
         fontFamily: font.attributes.name,
         fontSize: font.attributes.size,
-        lineHeight: paragraph.maximumLineHeight || 0,
+        lineHeight: paragraph?.maximumLineHeight || 0,
         letterSpacing: parseFloat(textStyle.encodedAttributes.kerning.toFixed(2)),
         fonts: []
       };
@@ -184,18 +191,25 @@ module.exports = class {
       const attributes = this.layer.get('attributedString').getAll('stringAttribute');
 
       for (const item of attributes) {
-        const color = item.get('color');
-        color.alpha = opacity || color.alpha;
+        let color = item.get('color');
+        if (!color) {
+          color = {
+            red: 0,
+            green: 0,
+            blue: 0
+          };
+        }
+        color.alpha = color.alpha || opacity;
         const kerning = item.kerning || 0;
         const paragraph = item.get('paragraphStyle');
         const font = item.get('fontDescriptor');
 
         result.font.fonts.push({
           color: tools.colorParser(color),
-          textAlign: alignments[paragraph.alignment],
+          textAlign: alignments[paragraph?.alignment],
           fontFamily: font.attributes.name,
           fontSize: font.attributes.size,
-          lineHeight: paragraph.maximumLineHeight || 0,
+          lineHeight: paragraph?.maximumLineHeight || 0,
           letterSpacing: parseFloat(kerning.toFixed(2)),
           location: item.location,
           length: item.length

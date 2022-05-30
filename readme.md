@@ -46,7 +46,7 @@
 ```js
 npm i -g @zuoyanart/lens
 ```
-2，切换到项目目录执行命令
+2，切换到项目目录执行命令（目录参考demo）
 ```js
 lens g [platform]//platform: h5 or uniapp
 ````
@@ -60,7 +60,7 @@ git clone 本项目地址
 ```
 npm link
 ```
-3, 切换到项目目录执行命令
+3, 切换到项目目录执行命令（目录参考demo）
 ```js
 lens g [platform]//platform: h5 or uniapp
 ````
@@ -83,6 +83,19 @@ lens g [platform]//platform: h5 or uniapp
 npm config set sharp_binary_host "https://npm.taobao.org/mirrors/sharp"
 npm config set sharp_libvips_binary_host "https://npm.taobao.org/mirrors/sharp-libvips"
 ```
+
+### 演示
+#### 生成静态页
+<video id="video" controls="" preload="none" poster="封面">
+  <source id="mp4" src="./doc/demo/h5.mp4" type="video/mp4">
+</videos>
+
+#### 验证还原度
+<video id="video" controls="" preload="none"  poster="封面">
+    <source id="mp41" src="./doc/demo/check.mp4" type="video/mp4">
+</videos>
+
+
 ### 大版本 RoadMap
 
 - [x] 文本分类。 使css更加语义化

@@ -39,8 +39,7 @@ module.exports = class {
 
     const spinner1 = await tools.loading('智能编排');
     spinner1.succeed();
-    console.log('执行时间', new Date().getTime() - startTime);
-    // throw new Error('asdasd');
+    // console.log('执行时间', new Date().getTime() - startTime);
 
     return this.layerResult;
   }
