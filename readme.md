@@ -46,7 +46,7 @@
 ```js
 npm i -g @zuoyanart/lens
 ```
-2，切换到项目目录执行命令（目录参考demo）
+2，切换到项目目录执行命令（**目录结构参考demo**）
 ```js
 lens g [platform]//platform: h5 or uniapp
 ````
@@ -60,7 +60,7 @@ git clone 本项目地址
 ```
 npm link
 ```
-3, 切换到项目目录执行命令（目录参考demo）
+3, 切换到项目目录执行命令（**目录结构参考demo**）
 ```js
 lens g [platform]//platform: h5 or uniapp
 ````
