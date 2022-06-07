@@ -46,7 +46,7 @@ module.exports = class {
 
     let outputFile = null;
 
-    outputFile = path.resolve(yunjin.WORK_PATH, './' + this.configTarget.platform + '/' + this.configTarget.artboardName + '/' + this.configTarget.artboardName + this.configTarget.style.extName);
+    outputFile = path.resolve(yunjin.WORK_PATH, './' + this.configTarget.platform + '/' + this.configTarget.artboardName + '/' + this.configTarget.artboardName + (this.configTarget.style.extName || '.css'));
     fs.outputFileSync(outputFile, css);
 
     // html部分
@@ -68,7 +68,7 @@ module.exports = class {
     const result = template.render(source, {
       content: (astResult), // this.doc,
       css: css,
-      cssPath: path.join(this.configTarget.style.pageDisplayPath, yunjin.config.target.artboardName + this.configTarget.style.extName)
+      cssPath: path.join(this.configTarget.style.pageDisplayPath, yunjin.config.target.artboardName + (this.configTarget.style.extName || '.css'))
     }, {
       escape: false,
       minimize: false
