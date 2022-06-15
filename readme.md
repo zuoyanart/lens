@@ -39,6 +39,18 @@
 * PC 端 toB 应用 - 暂无适配
 * PC 端富交互应用 - 暂无适配
 * 游戏场景 - 暂无适配
+
+### 低代码链路规划
+
+#### 逻辑/事件编排
+
+可以通过可视化操作的操作绑定部分逻辑
+
+#### 服务器端语义理解
+对api的语义化理解，自动化处理数据绑定等操作
+
+#### release部署
+通过自定义部署命令或者对接CI流程，完成自动化部署
   
 ### 如何使用
 #### 直接使用
@@ -91,12 +103,13 @@ npm config set sharp_libvips_binary_host "https://npm.taobao.org/mirrors/sharp-l
 #### 验证还原度
 ![验证还原度](./doc/demo/check.gif)
 
-### 大版本 RoadMap
+### D2C大版本 RoadMap
 
 - [x] 文本分类。 使css更加语义化
 - [ ] 自动组合图形算法增强
 - [ ] 图片分类。 自动识别icon图标
 - [ ] 目标检测。 自动识别组件
+
 ### changeLog
 [changeLog](./changeLog.md)
 
@@ -147,7 +160,6 @@ module.exports = {
 
 ```
 
-#### 联系作者
-> 有问题请先issues
+#### 联系作者入群交流
 
-<img src="https://images.gitee.com/uploads/images/2022/0521/194211_51931ed8_693746.jpeg" style="width:200px;"/>
+<img src="./doc/qr.jpg"/>
